@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat, Advent_Pro } from "next/font/google"
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -26,11 +28,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body
-                className={`${montserrat.variable} ${adventPro.variable} antialiased`}
-            >
-                {children}
+            <body className={`${montserrat.className} ${adventPro.variable} antialiased min-h-screen`}>
+                <ThemeProvider>
+                    <Navbar />
+                    {children}
+                </ThemeProvider>
             </body>
-        </html>
+        </html >
     );
 }

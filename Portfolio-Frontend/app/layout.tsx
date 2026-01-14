@@ -18,6 +18,10 @@ const adventPro = Advent_Pro({
 export const metadata: Metadata = {
     title: "Portfolio",
     description: "My Portfolio",
+    icons: {
+        icon: "/favicon.ico",
+        apple: "/favicon.png"
+    }
 };
 
 export default function RootLayout({

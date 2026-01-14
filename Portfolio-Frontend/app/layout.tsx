@@ -6,7 +6,6 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
-    variable: "--font-montserrat",
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 })
 
@@ -17,7 +16,7 @@ const adventPro = Advent_Pro({
 })
 
 export const metadata: Metadata = {
-    title: "Portfolio Page",
+    title: "Portfolio",
     description: "My Portfolio",
 };
 
@@ -28,10 +27,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`${montserrat.className} ${adventPro.variable} antialiased min-h-screen`}>
+            <body className={`${montserrat.className} ${adventPro.variable} antialiased h-screen flex flex-col`}>
                 <ThemeProvider>
                     <Navbar />
-                    {children}
+                    <main className="flex-1 overflow-y-auto">
+                        {children}
+                    </main>
                 </ThemeProvider>
             </body>
         </html >

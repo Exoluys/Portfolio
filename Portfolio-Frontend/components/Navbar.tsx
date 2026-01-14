@@ -9,7 +9,7 @@ const Navbar = () => {
         <nav className="h-25 w-full">
             <div className="flex h-full items-center justify-end px-6 gap-5">
                 <NavigationMenu>
-                    <NavigationMenuList className="gap-3">
+                    <NavigationMenuList className="font-semibold gap-3">
                         <NavigationMenuItem>
                             <NavigationMenuLink asChild>
                                 <Link href="#about" className="px-6 py-2">About me</Link>
@@ -27,7 +27,7 @@ const Navbar = () => {
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
-                <Button variant="default" className="px-6 py-4 font-medium rounded-full" asChild>
+                <Button variant="default" className="px-6 py-4 font-bold rounded-full" asChild>
                     <Link href="#ContactMe">CONTACT ME</Link>
                 </Button>
             </div>

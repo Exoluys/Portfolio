@@ -20,17 +20,17 @@ const Navbar = () => {
                         <NavigationMenuList className="font-semibold gap-3">
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
-                                    <Link href="#about" className="px-6 py-2">About me</Link>
+                                    <Link href="#about" className="px-6 py-2 hover:scale-105 transition-transform duration-200">About me</Link>
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
-                                    <Link href="#skills" className="px-6 py-2">Skills</Link>
+                                    <Link href="#skills" className="px-6 py-2 hover:scale-105 transition-transform duration-200">Skills</Link>
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
-                                    <Link href="/" className="px-6 py-2">Portfolio</Link>
+                                    <Link href="/" className="px-6 py-2 hover:scale-105 transition-transform duration-200">Portfolio</Link>
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                         </NavigationMenuList>

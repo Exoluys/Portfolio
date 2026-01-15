@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Skills from "@/components/Skills";
 import { AtSign, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 
@@ -39,6 +40,9 @@ export default function Home() {
             <section id="about" className="h-screen">
                 <About />
             </section >
+            <section id="skills" className="h-screen">
+                <Skills />
+            </section>
         </>
 
     )

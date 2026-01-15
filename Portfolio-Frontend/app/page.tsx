@@ -36,11 +36,11 @@ export default function Home() {
                         <Linkedin className="w-8 h-8" />
                     </a>
                 </div>
-            </div >
-            <section id="about" className="h-screen">
+            </div>
+            <section id="about" className="h-full mb-40">
                 <About />
             </section >
-            <section id="skills" className="h-screen">
+            <section id="skills" className="h-full">
                 <Skills />
             </section>
         </>

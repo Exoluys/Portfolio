@@ -6,7 +6,7 @@ const About = () => {
         <>
             <div className="flex flex-col items-center justify-center space-y-10">
                 <h2 className="px-15 py-4 text-xl border-4 border-white tracking-[0.3em]">ABOUT ME</h2>
-                <div className="max-w-4xl px-6 text-center space-y-4 text-[1.24rem]">
+                <div className="max-w-4xl px-6 font-sans text-center space-y-4 text-[1.24rem]">
                     <p>
                         Hi, I&#39;m Jai Revankar, a passionate developer with a strong background in Python, Django, and front-end technologies. I enjoy building clean, efficient, and user-friendly applications, from web platforms to automation tools. Beyond coding, I&#39;m a creative thinker with experience in video editing, and I thrive on turning ideas into real, functional solutions.
                     </p>
@@ -32,7 +32,7 @@ const About = () => {
                                 DESIGN
                             </h1>
                         </div>
-                        <p className="text-[1rem]">
+                        <p className="font-sans text-[1.06rem]">
                             I can design the site based on your needs and suggestions. I can also design the site from scratch and consult you during the job.
                         </p>
                     </div>
@@ -45,7 +45,7 @@ const About = () => {
                                 DEVELOPMENT
                             </h1>
                         </div>
-                        <p className="text-[1.025rem]">
+                        <p className="font-sans text-[1.06rem]">
                             Based on a project created by me or another one, sent by you, I can program the website to be fully functional and responsive.
                         </p>
                     </div>
@@ -59,7 +59,7 @@ const About = () => {
                             MAINTENANCE
                         </h1>
                     </div>
-                    <p className="text-[1.035rem]">
+                    <p className="font-sans text-[1.06rem]">
                         In case of any problems or the need for changes, I can introduce new functionalities and solutions.
                     </p>
                 </div>

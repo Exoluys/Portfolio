@@ -6,6 +6,7 @@ import Image from "next/image";
 export default function Home() {
     return (
         <>
+            <div id="top" />
             <div className="h-full flex flex-col pt-70 items-center">
                 <p className="text-4xl font-family-advent font-extralight">my name is Jai</p>
                 <h2 className="text-6xl font-semibold mb-2">I&#39;M A DEVELOPER</h2>

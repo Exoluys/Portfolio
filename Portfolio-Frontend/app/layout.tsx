@@ -3,6 +3,8 @@ import { Montserrat, Advent_Pro } from "next/font/google"
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import ScrollOnRefresh from "@/components/Scroll/ScrollOnRefresh";
+import ScrollSpy from "@/components/Scroll/ScrollSpy";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -35,6 +37,8 @@ export default function RootLayout({
                 <ThemeProvider>
                     <Navbar />
                     <main className="flex-1 overflow-y-auto">
+                        <ScrollOnRefresh />
+                        <ScrollSpy />
                         {children}
                     </main>
                 </ThemeProvider>

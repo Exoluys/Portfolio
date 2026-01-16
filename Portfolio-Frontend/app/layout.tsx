@@ -36,7 +36,7 @@ export default function RootLayout({
             <body className={`${montserrat.className} ${adventPro.variable} antialiased h-screen flex flex-col`}>
                 <ThemeProvider>
                     <Navbar />
-                    <main className="flex-1 overflow-y-auto">
+                    <main className="flex-1 overflow-y-auto scroll-smooth">
                         <ScrollOnRefresh />
                         <ScrollSpy />
                         {children}

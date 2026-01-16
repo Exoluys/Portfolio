@@ -9,12 +9,15 @@ const Navbar = () => {
     return (
         <nav className="h-25 w-full">
             <div className="flex h-full items-center justify-between px-12">
-                <Image
-                    src="/favicon.png"
-                    alt="Logo"
-                    width={100}
-                    height={1}
-                />
+                <Link href="/">
+                    <Image
+                        src="/favicon.png"
+                        alt="Logo"
+                        width={100}
+                        height={1}
+                    />
+                </Link>
+
                 <div className="flex items-center pr-6 gap-5">
                     <NavigationMenu>
                         <NavigationMenuList className="font-semibold gap-3">

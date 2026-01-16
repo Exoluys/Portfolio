@@ -7,7 +7,7 @@ const Hero = () => {
             <p className="text-4xl font-family-advent font-extralight">my name is Jai</p>
             <h2 className="text-6xl font-semibold mb-2">I&#39;M A DEVELOPER</h2>
             <Image
-                src="/separator-transparent(1).png"
+                src="/separator-transparent.png"
                 alt="separator"
                 width={120}
                 height={1}

@@ -16,7 +16,7 @@ export default function Home() {
             <section id="skills" className="w-full pb-40">
                 <Skills />
             </section>
-            <section id="contact" className="w-full pb-20">
+            <section id="contact" className="w-full pb-40">
                 <Contact />
             </section>
         </>

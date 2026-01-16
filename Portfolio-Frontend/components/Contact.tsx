@@ -5,7 +5,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form"
 import { ContactFormValues } from "@/lib/type/contact"
 import { Input } from "./ui/input"
 import { Button } from "./ui/button"
-import axios, { Axios } from "axios"
+import axios from "axios"
 
 const Contact = () => {
     const form = useForm<ContactFormValues>({

@@ -36,7 +36,7 @@ const Navbar = () => {
                         </NavigationMenuList>
                     </NavigationMenu>
                     <Button variant="default" className="px-6 py-4 font-bold rounded-full" asChild>
-                        <Link href="#ContactMe">CONTACT ME</Link>
+                        <Link href="#contact">CONTACT ME</Link>
                     </Button>
                 </div>
 

@@ -46,7 +46,7 @@ const Contact = () => {
         console.log(data)
 
         try {
-            const res = await axios.post<ContactFormValues>("/api/contact", data)
+            const res = await axios.post<ContactFormValues>("/api", data)
             console.log(res.data)
         }
         catch (err) {

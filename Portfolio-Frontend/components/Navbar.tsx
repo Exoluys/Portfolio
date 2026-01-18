@@ -23,23 +23,23 @@ const Navbar = () => {
                         <NavigationMenuList className="font-semibold gap-3">
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
-                                    <Link href="#about" className="px-6 py-2 hover:scale-105 transition-transform duration-200">About me</Link>
+                                    <Link href="/#about" className="px-6 py-2 hover:scale-105 transition-transform duration-200">About me</Link>
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
-                                    <Link href="#skills" className="px-6 py-2 hover:scale-105 transition-transform duration-200">Skills</Link>
+                                    <Link href="/#skills" className="px-6 py-2 hover:scale-105 transition-transform duration-200">Skills</Link>
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild>
-                                    <Link href="/" className="px-6 py-2 hover:scale-105 transition-transform duration-200">Portfolio</Link>
+                                    <Link href="/portfolio" className="px-6 py-2 hover:scale-105 transition-transform duration-200">Portfolio</Link>
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
                     <Button variant="default" className="px-6 py-4 font-bold rounded-full" asChild>
-                        <Link href="#contact">CONTACT ME</Link>
+                        <Link href="/#contact">CONTACT ME</Link>
                     </Button>
                 </div>
 

@@ -15,7 +15,7 @@ const About = () => {
                     </p>
                 </div>
                 <Image
-                    src="/separator-transparent(1).png"
+                    src="/separator-transparent.png"
                     alt="separator"
                     width={120}
                     height={1}

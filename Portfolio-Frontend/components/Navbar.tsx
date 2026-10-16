@@ -5,9 +5,10 @@ import { usePathname, useRouter } from "next/navigation"
 import { Button } from "./ui/button"
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "./ui/navigation-menu"
 import Image from "next/image"
+import { portfolioData } from "@/data/portfolio"
 import { useActiveSection } from "@/hooks/useActiveSection"
 import { scrollToTarget } from "@/lib/scroll"
-import { portfolioData } from "@/data/portfolio"
+
 
 const Navbar = () => {
     const { links, contactCta } = portfolioData.navigation
@@ -56,9 +57,8 @@ const Navbar = () => {
                                             <Link
                                                 href={link.href}
                                                 onClick={handleNav(link.targetId, link.isPage)}
-                                                className={`px-6 py-2 transition-all duration-200 hover:scale-105 ${
-                                                    isCurrent ? "text-primary font-bold" : ""
-                                                }`}
+                                                className={`px-6 py-2 transition-all duration-200 hover:scale-105 ${isCurrent ? "text-primary font-bold" : ""
+                                                    }`}
                                             >
                                                 {link.label}
                                             </Link>
@@ -82,4 +82,4 @@ const Navbar = () => {
 }
 
 export default Navbar
-
+

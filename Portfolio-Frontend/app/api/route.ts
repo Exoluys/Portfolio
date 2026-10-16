@@ -4,7 +4,25 @@ import { portfolioData } from '@/data/portfolio'
 
 export async function POST(req: NextRequest) {
     try {
-        const { name, email, phone, message } = await req.json()
+        const body = await req.json().catch(() => null)
+        if (!body || typeof body !== 'object') {
+            return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
+        }
+
+        const { name, email, phone, message } = body
+
+        if (!name || typeof name !== 'string' || name.trim().length === 0) {
+            return NextResponse.json({ error: 'Name is required' }, { status: 400 })
+        }
+
+        if (!email || typeof email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+            return NextResponse.json({ error: 'A valid email address is required' }, { status: 400 })
+        }
+
+        if (!message || typeof message !== 'string' || message.trim().length === 0) {
+            return NextResponse.json({ error: 'Message is required' }, { status: 400 })
+        }
+
         const recipientEmail = process.env.EMAIL_USER || portfolioData.personal.email
 
         const transporter = nodemailer.createTransport({

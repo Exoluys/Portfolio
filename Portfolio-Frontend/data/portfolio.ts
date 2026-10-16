@@ -37,9 +37,17 @@ export interface PortfolioData {
         greeting: string
         name: string
         role: string
+        tagline: string
         email: string
         copyrightName: string
         copyrightYear: number
+    }
+    siteMetadata: {
+        title: string
+        titleTemplate: string
+        description: string
+        siteUrl: string
+        keywords: string[]
     }
     socialLinks: {
         email: SocialLink
@@ -72,9 +80,17 @@ export const portfolioData: PortfolioData = {
         greeting: "my name is Jai",
         name: "Jai Revankar",
         role: "I'M A DEVELOPER",
+        tagline: "Python & Django Developer",
         email: "jairevankar98@gmail.com",
         copyrightName: "Jai Revankar",
         copyrightYear: new Date().getFullYear(),
+    },
+    siteMetadata: {
+        title: "Jai Revankar | Python & Django Developer",
+        titleTemplate: "%s | Jai Revankar",
+        description: "Portfolio of Jai Revankar, a passionate developer specializing in Python, Django, Next.js, and modern web applications.",
+        siteUrl: "https://jairevankar.dev",
+        keywords: ["Jai Revankar", "Python Developer", "Django Developer", "Full Stack Developer", "Next.js", "React", "Portfolio"],
     },
     socialLinks: {
         email: {

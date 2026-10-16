@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Montserrat, Advent_Pro } from "next/font/google"
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { HashCleaner } from "@/components/HashCleaner";
+
+import { portfolioData } from "@/data/portfolio";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -17,12 +19,41 @@ const adventPro = Advent_Pro({
 })
 
 export const metadata: Metadata = {
-    title: "Portfolio",
-    description: "My Portfolio",
+    title: {
+        default: portfolioData.siteMetadata.title,
+        template: portfolioData.siteMetadata.titleTemplate,
+    },
+    description: portfolioData.siteMetadata.description,
+    keywords: portfolioData.siteMetadata.keywords,
+    authors: [{ name: portfolioData.personal.name }],
+    creator: portfolioData.personal.name,
+    metadataBase: new URL(portfolioData.siteMetadata.siteUrl),
+    openGraph: {
+        type: "website",
+        locale: "en_US",
+        url: portfolioData.siteMetadata.siteUrl,
+        title: portfolioData.siteMetadata.title,
+        description: portfolioData.siteMetadata.description,
+        siteName: portfolioData.personal.name,
+        images: [
+            {
+                url: "/favicon.png",
+                width: 512,
+                height: 512,
+                alt: `${portfolioData.personal.name} Logo`,
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: portfolioData.siteMetadata.title,
+        description: portfolioData.siteMetadata.description,
+        images: ["/favicon.png"],
+    },
     icons: {
         icon: "/favicon.ico",
-        apple: "/favicon.png"
-    }
+        apple: "/favicon.png",
+    },
 };
 
 export default function RootLayout({

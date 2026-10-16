@@ -52,9 +52,9 @@ const About = () => {
                         <div className="flex flex-col gap-3">
                             <div className="relative inline-flex items-center gap-3 tracking-[0.2em]">
                                 {serviceIcons[designService.id]}
-                                <h1 className="relative z-10 text-2xl font-semibold">
+                                <h3 className="relative z-10 text-2xl font-semibold">
                                     {designService.title}
-                                </h1>
+                                </h3>
                             </div>
                             <p className="font-sans text-[1.06rem]">
                                 {designService.description}
@@ -65,9 +65,9 @@ const About = () => {
                         <div className="flex flex-col gap-3">
                             <div className="relative inline-flex items-center gap-3 tracking-[0.2em]">
                                 {serviceIcons[devService.id]}
-                                <h1 className="relative z-10 text-2xl font-semibold">
+                                <h3 className="relative z-10 text-2xl font-semibold">
                                     {devService.title}
-                                </h1>
+                                </h3>
                             </div>
                             <p className="font-sans text-[1.06rem]">
                                 {devService.description}
@@ -79,9 +79,9 @@ const About = () => {
                     <div className="w-120 flex flex-col gap-3">
                         <div className="relative inline-flex items-center gap-3 tracking-[0.2em]">
                             {serviceIcons[maintenanceService.id]}
-                            <h1 className="relative z-10 text-2xl font-semibold">
+                            <h3 className="relative z-10 text-2xl font-semibold">
                                 {maintenanceService.title}
-                            </h1>
+                            </h3>
                         </div>
                         <p className="font-sans text-[1.06rem]">
                             {maintenanceService.description}

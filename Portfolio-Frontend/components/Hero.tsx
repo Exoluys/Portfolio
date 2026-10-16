@@ -1,6 +1,6 @@
+import { portfolioData } from "@/data/portfolio"
 import { AtSign, Github, Linkedin } from "lucide-react"
 import Image from "next/image"
-import { portfolioData } from "@/data/portfolio"
 
 const Hero = () => {
     const { personal, socialLinks } = portfolioData
@@ -45,4 +45,4 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default Hero

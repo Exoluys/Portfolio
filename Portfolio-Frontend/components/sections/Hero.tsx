@@ -13,12 +13,13 @@ const Hero = () => {
     const handleActionClick = (targetId: string, isPage?: boolean) => (e: React.MouseEvent<HTMLAnchorElement>) => {
         if (isPage) return
 
+        e.preventDefault()
+
         if (pathname === "/") {
-            e.preventDefault()
             scrollToTarget(targetId)
         } else {
-            e.preventDefault()
-            router.push(`/#${targetId}`)
+            sessionStorage.setItem("pendingScroll", targetId)
+            router.push("/")
         }
     }
 

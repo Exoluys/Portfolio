@@ -24,6 +24,7 @@
 }
 
 :root {
+  --nav-height: 4rem;
   /* Warm off-white editorial paper palette */
   --background: #FAF8F5;
   --foreground: #111111;
@@ -42,6 +43,7 @@
 }
 
 .dark {
+  --nav-height: 4rem;
   /* Warm ink dark palette */
   --background: #0E0E0D;
   --foreground: #F2EFE9;
@@ -63,7 +65,7 @@
 }
 
 html {
-  scroll-padding-top: 5rem;
+  scroll-padding-top: var(--nav-height);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

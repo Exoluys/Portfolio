@@ -15,7 +15,8 @@ interface NavLinksProps {
 
 export function NavLinks({ links }: NavLinksProps) {
     const [mobileOpen, setMobileOpen] = useState(false)
-    const scrollSectionIds = ["home", ...links.filter((l) => !l.isPage).map((l) => l.targetId)]
+    // Observe all in-page sections on the home page
+    const scrollSectionIds = ["home", "about", "skills", "work", "contact"]
     const activeSection = useActiveSection(scrollSectionIds)
     const pathname = usePathname()
     const router = useRouter()
@@ -26,12 +27,14 @@ export function NavLinks({ links }: NavLinksProps) {
             return
         }
 
+        e.preventDefault()
+
         if (pathname === "/") {
-            e.preventDefault()
             scrollToTarget(targetId)
         } else {
-            e.preventDefault()
-            router.push(targetId === "home" ? "/" : `/#${targetId}`)
+            // Navigate to home, but DO NOT append hash to URL
+            sessionStorage.setItem("pendingScroll", targetId)
+            router.push("/")
         }
     }
 

@@ -1,34 +1,49 @@
+import type { Metadata } from "next"
+import Link from "next/link"
 import { portfolioData } from "@/data/portfolio"
+import { ProjectList } from "@/components/sections/ProjectList"
+
+export const metadata: Metadata = {
+    title: "Work",
+    description: "A chronological archive of web systems, tools, and digital projects by Jai Revankar.",
+}
 
 export default function PortfolioPage() {
     const { projects } = portfolioData
 
     return (
-        <div className="min-h-[calc(100vh-6.25rem)] flex flex-col items-center justify-center px-6 py-20">
-            <h1 className="px-15 py-4 text-xl border-4 border-white tracking-[0.3em] mb-12">
-                PROJECTS
-            </h1>
-            {projects.length === 0 ? (
-                <p className="text-xl text-gray-400 font-sans tracking-wider">
-                    Projects coming soon.
-                </p>
-            ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
-                    {projects.map((project, idx) => (
-                        <div key={idx} className="border border-white/20 p-6 flex flex-col gap-4">
-                            <h2 className="text-xl font-semibold">{project.title}</h2>
-                            <p className="text-gray-300 text-sm">{project.description}</p>
-                            <div className="flex flex-wrap gap-2 mt-auto">
-                                {project.tech.map((t) => (
-                                    <span key={t} className="text-xs px-2 py-1 bg-white/10 rounded">
-                                        {t}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full py-20 sm:py-28 lg:py-36">
+            {/* Header with 12-Column Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-16 sm:mb-24">
+                <div className="lg:col-span-3">
+                    <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground block mb-2">
+                        Archive
+                    </span>
+                    <Link
+                        href="/"
+                        className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5"
+                    >
+                        <span>← Back to home</span>
+                    </Link>
                 </div>
-            )}
+
+                <div className="lg:col-span-9">
+                    <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-foreground tracking-tight mb-6">
+                        Selected Work
+                    </h1>
+                    <p className="font-sans text-base sm:text-lg text-muted-foreground max-w-[65ch] leading-relaxed">
+                        An index of web platforms, automation tools, and user interfaces developed with Python, Django, Next.js, and clean software architecture.
+                    </p>
+                </div>
+            </div>
+
+            {/* Project List */}
+            <div className="max-w-7xl mx-auto">
+                <ProjectList
+                    projects={projects}
+                    placeholderText="Selected work, coming soon."
+                />
+            </div>
         </div>
     )
-}
+}

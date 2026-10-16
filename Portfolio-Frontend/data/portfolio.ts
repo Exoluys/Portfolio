@@ -26,7 +26,9 @@ export interface NavLinkItem {
 export interface ProjectItem {
     title: string
     description: string
+    year: string
     tech: string[]
+    featured?: boolean
     liveUrl?: string
     githubUrl?: string
     image?: string
@@ -169,5 +171,27 @@ export const portfolioData: PortfolioData = {
             href: "/#contact",
         },
     },
-    projects: [],
+    projects: [
+        /*
+        Uncomment the items below to preview the Work layout with sample projects:
+        {
+            title: "Automated Workflow Engine",
+            description: "High-throughput asynchronous task automation pipeline and data extraction service.",
+            year: "2025",
+            tech: ["Python", "Django", "Celery", "PostgreSQL"],
+            featured: true,
+            githubUrl: "https://github.com/Exoluys",
+            liveUrl: "https://github.com/Exoluys",
+        },
+        {
+            title: "Editorial Design System",
+            description: "Minimalist web architecture and type-driven components with Next.js and Tailwind.",
+            year: "2024",
+            tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+            featured: true,
+            githubUrl: "https://github.com/Exoluys",
+            liveUrl: "https://github.com/Exoluys",
+        },
+        */
+    ],
 }

@@ -1,51 +1,8 @@
 import Image from "next/image"
+import { portfolioData } from "@/data/portfolio"
 
 const Using = () => {
-    const logos_top = [
-        {
-            name: "NEXT JS",
-            src: "/Logo/NEXT.png",
-            alt: "NEXT Logo",
-        },
-
-        {
-            name: "TAILWIND",
-            src: "/Logo/Tailwind.png",
-            alt: "Tailwind Logo",
-        },
-        {
-            name: "HTML",
-            src: "/Logo/Html.png",
-            alt: "Html Logo",
-        },
-        {
-            name: "TYPESCRIPT",
-            src: "/Logo/Typescript.png",
-            alt: "Typescript Logo",
-        },
-    ]
-    const logos_bot = [
-        {
-            name: "DJANGO",
-            src: "/Logo/Django.png",
-            alt: "Django Logo",
-        },
-        {
-            name: "MYSQL",
-            src: "/Logo/MySQL.png",
-            alt: "MySQL Logo",
-        },
-        {
-            name: "GIT",
-            src: "/Logo/Git.png",
-            alt: "Git Logo",
-        },
-        {
-            name: "FIGMA",
-            src: "/Logo/Figma.png",
-            alt: "Figma Logo",
-        },
-    ]
+    const { top: logos_top, bottom: logos_bot } = portfolioData.skills.usingNow
 
     return (
         <div className="flex flex-col gap-10">
@@ -86,4 +43,4 @@ const Using = () => {
     )
 }
 
-export default Using
+export default Using

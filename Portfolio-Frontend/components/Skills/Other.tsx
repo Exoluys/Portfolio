@@ -1,28 +1,8 @@
 import Image from "next/image"
+import { portfolioData } from "@/data/portfolio"
 
 const Other = () => {
-    const logos = [
-        {
-            name: "C",
-            src: "/Logo/C.png",
-            alt: "C Logo",
-        },
-        {
-            name: "C++",
-            src: "/Logo/C++.png",
-            alt: "C++ Logo",
-        },
-        {
-            name: "POSTGRESQL",
-            src: "/Logo/PostgreSQL.png",
-            alt: "PostgreSQL Logo",
-        },
-        {
-            name: "REACT",
-            src: "/Logo/React.png",
-            alt: "React Logo",
-        },
-    ]
+    const logos = portfolioData.skills.otherSkills
 
     return (
         <div className="flex gap-16">
@@ -44,4 +24,4 @@ const Other = () => {
     )
 }
 
-export default Other
+export default Other

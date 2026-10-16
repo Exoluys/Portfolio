@@ -3,8 +3,11 @@
 import { ChevronsUp } from 'lucide-react';
 import Link from 'next/link';
 import { scrollToTarget } from '@/lib/scroll';
+import { portfolioData } from '@/data/portfolio';
 
 const Footer = () => {
+    const { copyrightName, copyrightYear } = portfolioData.personal
+
     const handleScrollTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault()
         scrollToTarget("home")
@@ -22,10 +25,11 @@ const Footer = () => {
             </Link>
 
             <p className="text-sm text-gray-400">
-                @2026 <span className="text-white">Jai Revankar</span> All Rights Reserved.
+                @{copyrightYear} <span className="text-white">{copyrightName}</span> All Rights Reserved.
             </p>
         </div>
     )
 }
 
-export default Footer
+export default Footer
+

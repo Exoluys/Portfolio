@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { portfolioData } from '@/data/portfolio'
 
 export async function POST(req: NextRequest) {
     try {
         const { name, email, phone, message } = await req.json()
+        const recipientEmail = process.env.EMAIL_USER || portfolioData.personal.email
 
         const transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -14,8 +16,8 @@ export async function POST(req: NextRequest) {
         })
 
         const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER,
+            from: process.env.EMAIL_USER || recipientEmail,
+            to: recipientEmail,
             replyTo: email,
             subject: `${name} Has Sent an Email`,
             html: `

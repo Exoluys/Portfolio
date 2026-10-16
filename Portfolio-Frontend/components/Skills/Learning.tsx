@@ -1,28 +1,8 @@
 import Image from "next/image"
+import { portfolioData } from "@/data/portfolio"
 
 const Learning = () => {
-    const logos = [
-        {
-            name: "JAVA",
-            src: "/Logo/Java.png",
-            alt: "Java Logo",
-        },
-        {
-            name: "C#",
-            src: "/Logo/Csharp.png",
-            alt: "C# Logo",
-        },
-        {
-            name: "DOCKER",
-            src: "/Logo/Docker.png",
-            alt: "Docker Logo",
-        },
-        {
-            name: "NODE",
-            src: "/Logo/Node.png",
-            alt: "Node Logo",
-        },
-    ]
+    const logos = portfolioData.skills.learning
 
     return (
         <div className="flex gap-16">
@@ -44,4 +24,4 @@ const Learning = () => {
     )
 }
 
-export default Learning
+export default Learning

@@ -1,11 +1,14 @@
 import { AtSign, Github, Linkedin } from "lucide-react"
 import Image from "next/image"
+import { portfolioData } from "@/data/portfolio"
 
 const Hero = () => {
+    const { personal, socialLinks } = portfolioData
+
     return (
         <>
-            <p className="text-4xl font-family-advent font-extralight">my name is Jai</p>
-            <h2 className="text-6xl font-semibold mb-2">I&#39;M A DEVELOPER</h2>
+            <p className="text-4xl font-family-advent font-extralight">{personal.greeting}</p>
+            <h2 className="text-6xl font-semibold mb-2">{personal.role}</h2>
             <Image
                 src="/separator-transparent.png"
                 alt="separator"
@@ -14,21 +17,26 @@ const Hero = () => {
             />
             <div className="mt-4 flex space-x-8">
                 <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=jairevankar98@gmail.com"
+                    href={socialLinks.email.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={socialLinks.email.ariaLabel}
                 >
                     <AtSign className="w-8 h-8" />
                 </a>
                 <a
-                    href="https://github.com/Exoluys"
+                    href={socialLinks.github.url}
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={socialLinks.github.ariaLabel}
                 >
                     <Github className="w-8 h-8" />
                 </a>
                 <a
-                    href="https://www.linkedin.com/in/jai-revankar-002bb0215/"
+                    href={socialLinks.linkedin.url}
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={socialLinks.linkedin.ariaLabel}
                 >
                     <Linkedin className="w-8 h-8" />
                 </a>
@@ -37,4 +45,4 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default Hero

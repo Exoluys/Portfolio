@@ -119,8 +119,15 @@
 }
 
 html {
+  scroll-padding-top: 4rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer base {

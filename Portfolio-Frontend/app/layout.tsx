@@ -3,8 +3,7 @@ import { Montserrat, Advent_Pro } from "next/font/google"
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import ScrollOnRefresh from "@/components/Scroll/ScrollOnRefresh";
-import ScrollSpy from "@/components/Scroll/ScrollSpy";
+import { HashCleaner } from "@/components/HashCleaner";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
@@ -32,17 +31,16 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
-            <body className={`${montserrat.className} ${adventPro.variable} antialiased h-screen flex flex-col`}>
+        <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
+            <body className={`${montserrat.className} ${adventPro.variable} antialiased min-h-screen flex flex-col`}>
                 <ThemeProvider>
+                    <HashCleaner />
                     <Navbar />
-                    <main className="flex-1 overflow-y-auto scroll-smooth">
-                        <ScrollOnRefresh />
-                        <ScrollSpy />
+                    <main className="flex-1">
                         {children}
                     </main>
                 </ThemeProvider>
             </body>
-        </html >
+        </html>
     );
 }

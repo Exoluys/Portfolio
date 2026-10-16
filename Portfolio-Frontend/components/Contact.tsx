@@ -59,7 +59,7 @@ const Contact = () => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center gap-20">
+        <div className="flex flex-col items-center justify-center gap-10">
             <h2 className="px-15 py-4 text-xl border-4 border-white tracking-[0.3em]">CONTACT</h2>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6 w-full max-w-sm">

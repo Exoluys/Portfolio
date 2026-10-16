@@ -8,16 +8,16 @@ export default function Home() {
     return (
         <>
             <div id="top" />
-            <section id="home" className="min-h-[calc(100vh-6.25rem)] flex flex-col items-center justify-center py-16">
+            <section id="home" className="min-h-[calc(100vh-4rem)] flex flex-col justify-center border-b border-border">
                 <Hero />
             </section>
-            <section id="about" className="w-full py-16 md:py-20">
+            <section id="about" className="w-full py-24 sm:py-32 border-b border-border">
                 <About />
             </section>
-            <section id="skills" className="w-full py-16 md:py-20">
+            <section id="skills" className="w-full py-24 sm:py-32 border-b border-border">
                 <Skills />
             </section>
-            <section id="contact" className="w-full py-16 md:py-20">
+            <section id="contact" className="w-full py-24 sm:py-32">
                 <Contact />
             </section>
             <footer className="w-full bg-[#000000cb] text-gray py-12">

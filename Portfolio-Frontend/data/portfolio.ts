@@ -38,6 +38,7 @@ export interface PortfolioData {
         name: string
         role: string
         tagline: string
+        heroSubtext: string
         email: string
         copyrightName: string
         copyrightYear: number
@@ -57,12 +58,9 @@ export interface PortfolioData {
     bio: string[]
     services: Service[]
     skills: {
-        usingNow: {
-            top: SkillItem[]
-            bottom: SkillItem[]
-        }
-        learning: SkillItem[]
-        otherSkills: SkillItem[]
+        usingNow: string[]
+        learning: string[]
+        otherSkills: string[]
     }
     navigation: {
         links: NavLinkItem[]
@@ -81,6 +79,7 @@ export const portfolioData: PortfolioData = {
         name: "Jai Revankar",
         role: "I'M A DEVELOPER",
         tagline: "Python & Django Developer",
+        heroSubtext: "I build web apps and automation tools with Python and Django, and I edit video on the side.",
         email: "jairevankar98@gmail.com",
         copyrightName: "Jai Revankar",
         copyrightYear: new Date().getFullYear(),
@@ -116,56 +115,56 @@ export const portfolioData: PortfolioData = {
     services: [
         {
             id: "design",
-            title: "DESIGN",
-            description: "I can design the site based on your needs and suggestions. I can also design the site from scratch and consult you during the job.",
+            title: "Design",
+            description: "Thoughtful UI/UX systems built with clean visual hierarchy, accessibility, and clear intent from concept to prototype.",
         },
         {
             id: "development",
-            title: "DEVELOPMENT",
-            description: "Based on a project created by me or another one, sent by you, I can program the website to be fully functional and responsive.",
+            title: "Development",
+            description: "Robust full-stack web applications and automation tools programmed with Python, Django, Next.js, and clean API design.",
         },
         {
             id: "maintenance",
-            title: "MAINTENANCE",
-            description: "In case of any problems or the need for changes, I can introduce new functionalities and solutions.",
+            title: "Maintenance",
+            description: "Continuous code refactoring, performance optimization, and reliable feature development to keep applications resilient.",
         },
     ],
     skills: {
-        usingNow: {
-            top: [
-                { name: "NEXT JS", src: "/Logo/NEXT.png", alt: "NEXT Logo" },
-                { name: "TAILWIND", src: "/Logo/Tailwind.png", alt: "Tailwind Logo" },
-                { name: "HTML", src: "/Logo/Html.png", alt: "Html Logo" },
-                { name: "TYPESCRIPT", src: "/Logo/Typescript.png", alt: "Typescript Logo" },
-            ],
-            bottom: [
-                { name: "DJANGO", src: "/Logo/Django.png", alt: "Django Logo" },
-                { name: "MYSQL", src: "/Logo/MySQL.png", alt: "MySQL Logo" },
-                { name: "GIT", src: "/Logo/Git.png", alt: "Git Logo" },
-                { name: "FIGMA", src: "/Logo/Figma.png", alt: "Figma Logo" },
-            ],
-        },
+        usingNow: [
+            "Python",
+            "Django",
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "HTML5 / CSS3",
+            "MySQL",
+            "Git",
+            "Figma",
+        ],
         learning: [
-            { name: "JAVA", src: "/Logo/Java.png", alt: "Java Logo" },
-            { name: "C#", src: "/Logo/Csharp.png", alt: "C# Logo" },
-            { name: "DOCKER", src: "/Logo/Docker.png", alt: "Docker Logo" },
-            { name: "NODE", src: "/Logo/Node.png", alt: "Node Logo" },
+            "Docker",
+            "Node.js",
+            "Java",
+            "C#",
         ],
         otherSkills: [
-            { name: "C", src: "/Logo/C.png", alt: "C Logo" },
-            { name: "C++", src: "/Logo/C++.png", alt: "C++ Logo" },
-            { name: "POSTGRESQL", src: "/Logo/PostgreSQL.png", alt: "PostgreSQL Logo" },
-            { name: "REACT", src: "/Logo/React.png", alt: "React Logo" },
+            "PostgreSQL",
+            "C / C++",
+            "Video Editing",
+            "Automation Scripting",
+            "REST APIs",
         ],
     },
     navigation: {
         links: [
-            { label: "About me", targetId: "about", href: "/#about" },
+            { label: "About", targetId: "about", href: "/#about" },
             { label: "Skills", targetId: "skills", href: "/#skills" },
-            { label: "Portfolio", targetId: "portfolio", href: "/portfolio", isPage: true },
+            { label: "Work", targetId: "portfolio", href: "/portfolio", isPage: true },
+            { label: "Contact", targetId: "contact", href: "/#contact" },
         ],
         contactCta: {
-            label: "CONTACT ME",
+            label: "Contact",
             targetId: "contact",
             href: "/#contact",
         },

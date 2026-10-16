@@ -3,15 +3,15 @@ import { NavLinks } from "./NavLinks"
 import { NavLogo } from "./NavLogo"
 
 const Navbar = () => {
-    const { links, contactCta } = portfolioData.navigation
+    const { links } = portfolioData.navigation
 
     return (
-        <nav className="h-25 w-full sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
-            <div className="flex h-full items-center justify-between px-12">
+        <header className="h-16 w-full sticky top-0 z-50 bg-background/85 backdrop-blur-md border-b border-border transition-colors">
+            <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-6 sm:px-8 lg:px-12">
                 <NavLogo />
-                <NavLinks links={links} contactCta={contactCta} />
+                <NavLinks links={links} />
             </div>
-        </nav>
+        </header>
     )
 }
 

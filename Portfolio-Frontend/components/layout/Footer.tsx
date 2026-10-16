@@ -1,12 +1,11 @@
 "use client";
 
-import { ChevronsUp } from 'lucide-react';
-import Link from 'next/link';
-import { scrollToTarget } from '@/lib/scroll';
 import { portfolioData } from '@/data/portfolio';
+import { scrollToTarget } from '@/lib/scroll';
 
 const Footer = () => {
-    const { copyrightName, copyrightYear } = portfolioData.personal
+    const { copyrightName } = portfolioData.personal
+    const currentYear = new Date().getFullYear()
 
     const handleScrollTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault()
@@ -14,22 +13,22 @@ const Footer = () => {
     }
 
     return (
-        <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col items-center">
-            <Link
-                href="#top"
-                onClick={handleScrollTop}
-                className="mb-8 text-sm tracking-wider hover:text-gray-300 transition-colors uppercase flex flex-col items-center gap-1 cursor-pointer"
-            >
-                <ChevronsUp size={24} />
-                Back to Top
-            </Link>
+        <footer className="w-full border-t border-border bg-background transition-colors">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-muted-foreground uppercase tracking-widest">
+                <p>
+                    © {currentYear} {copyrightName}. All rights reserved.
+                </p>
 
-            <p className="text-sm text-gray-400">
-                @{copyrightYear} <span className="text-white">{copyrightName}</span> All Rights Reserved.
-            </p>
-        </div>
+                <a
+                    href="#top"
+                    onClick={handleScrollTop}
+                    className="text-foreground hover:opacity-70 transition-opacity pb-0.5 border-b border-foreground cursor-pointer"
+                >
+                    Back to top ↑
+                </a>
+            </div>
+        </footer>
     )
 }
 
 export default Footer
-

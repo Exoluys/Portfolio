@@ -24,10 +24,7 @@ export default function Home() {
             <section id="contact" className="w-full py-24 sm:py-32 border-t border-border">
                 <Contact />
             </section>
-            <footer className="w-full bg-[#000000cb] text-gray py-12">
-                <Footer />
-            </footer>
+            <Footer />
         </>
-
     )
 }

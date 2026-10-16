@@ -4,10 +4,10 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
 import { ContactFormValues } from "@/lib/type/contact"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { portfolioData } from "@/data/portfolio"
 
 const Contact = () => {
+    const { personal, socialLinks } = portfolioData
     const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null)
 
     const form = useForm<ContactFormValues>({
@@ -18,40 +18,6 @@ const Contact = () => {
             message: "",
         },
     })
-
-    const formElements: {
-        name: keyof ContactFormValues
-        type: string
-        placeholder: string
-        label: string
-        required?: boolean
-        autoComplete?: string
-    }[] = [
-        {
-            name: "name",
-            type: "text",
-            placeholder: "ENTER YOUR NAME*",
-            label: "Your Full Name",
-            required: true,
-            autoComplete: "name",
-        },
-        {
-            name: "email",
-            type: "email",
-            placeholder: "ENTER YOUR EMAIL*",
-            label: "Your Email Address",
-            required: true,
-            autoComplete: "email",
-        },
-        {
-            name: "phone",
-            type: "tel",
-            placeholder: "PHONE NUMBER",
-            label: "Your Phone Number",
-            required: false,
-            autoComplete: "tel",
-        },
-    ]
 
     const onSubmit = async (data: ContactFormValues) => {
         setStatus(null)
@@ -75,7 +41,7 @@ const Contact = () => {
 
             setStatus({
                 type: "success",
-                message: "Message sent successfully! I'll get back to you soon.",
+                message: "Message sent successfully. I'll get back to you shortly.",
             })
             form.reset()
         } catch {
@@ -87,78 +53,224 @@ const Contact = () => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center gap-10">
-            <h2 className="px-15 py-4 text-xl border-4 border-white tracking-[0.3em]">CONTACT</h2>
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6 w-full max-w-sm">
-                    {formElements.map(({ name, placeholder, label, required, type, autoComplete }) => (
-                        <FormField
-                            key={name}
-                            control={form.control}
-                            name={name}
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormControl>
-                                        <Input
-                                            type={type}
-                                            placeholder={placeholder}
-                                            aria-label={label}
-                                            aria-required={required}
-                                            autoComplete={autoComplete}
-                                            className="w-full py-3 px-3 border-0 border-l-2 border-b-2 border-white/60 bg-transparent! rounded-none focus-visible:ring-0 placeholder:text-gray-400 placeholder:text-xs"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    ))}
-
-                    <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormControl>
-                                    <textarea
-                                        placeholder="YOUR MESSAGE*"
-                                        aria-label="Your Message"
-                                        aria-required={true}
-                                        className="w-full min-h-30 py-3 px-3 border-0 border-l-2 border-b-2 border-white/60 bg-transparent! rounded-none resize-none focus:outline-none placeholder:text-gray-400 placeholder:text-xs"
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-
-                    {status && (
-                        <p
-                            role="status"
-                            className={`text-xs text-center font-sans tracking-wide ${
-                                status.type === "success" ? "text-emerald-400" : "text-rose-400"
-                            }`}
-                        >
-                            {status.message}
-                        </p>
-                    )}
-
-                    <div className="flex items-center justify-center mt-4">
-                        <Button
-                            variant="ghost"
-                            type="submit"
-                            disabled={form.formState.isSubmitting}
-                            className="px-8 py-2 text-sm font-semibold border-0 border-l-2 border-r-2 border-white/60 rounded-none hover:bg-transparent! tracking-wider transition-colors cursor-pointer"
-                        >
-                            {form.formState.isSubmitting ? "SUBMITTING..." : "SUBMIT"}
-                        </Button>
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
+            {/* 12-Column Grid Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                {/* Left Column: Numbered TOC Section Label */}
+                <div className="lg:col-span-3">
+                    <div className="lg:sticky lg:top-24">
+                        <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground block mb-2">
+                            04 — Contact
+                        </span>
+                        <h2 className="font-serif text-3xl sm:text-4xl text-foreground font-normal">
+                            Get in Touch
+                        </h2>
                     </div>
-                </form>
-            </Form>
+                </div>
+
+                {/* Right Columns: Editorial Content & Minimal Underlined Form */}
+                <div className="lg:col-span-9 flex flex-col gap-16">
+                    {/* Direct Contact Invitation */}
+                    <div className="flex flex-col gap-6 max-w-[65ch]">
+                        <h3 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-foreground font-normal tracking-tight">
+                            Let&#39;s work together.
+                        </h3>
+                        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-sans">
+                            Have a project in mind, an opportunity to discuss, or just want to say hello? Reach out directly:
+                        </p>
+                        <div>
+                            <a
+                                href={`mailto:${personal.email}`}
+                                className="group inline-flex items-center gap-2 font-serif italic text-2xl sm:text-3xl text-foreground pb-1 border-b border-foreground hover:opacity-70 transition-opacity"
+                            >
+                                <span>{personal.email}</span>
+                                <span className="font-sans not-italic text-xl sm:text-2xl group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true">
+                                    ↗
+                                </span>
+                            </a>
+                        </div>
+
+                        {/* Plain Text Social Links with Arrow */}
+                        <div className="flex flex-wrap items-center gap-8 pt-4 font-mono text-xs uppercase tracking-widest">
+                            <a
+                                href={socialLinks.github.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group inline-flex items-center gap-1.5 text-foreground hover:opacity-70 pb-0.5 border-b border-foreground transition-opacity"
+                                aria-label={socialLinks.github.ariaLabel}
+                            >
+                                <span>GitHub</span>
+                                <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true">
+                                    ↗
+                                </span>
+                            </a>
+                            <a
+                                href={socialLinks.linkedin.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group inline-flex items-center gap-1.5 text-foreground hover:opacity-70 pb-0.5 border-b border-foreground transition-opacity"
+                                aria-label={socialLinks.linkedin.ariaLabel}
+                            >
+                                <span>LinkedIn</span>
+                                <span className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true">
+                                    ↗
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Minimal Underlined Form */}
+                    <div className="border-t border-border pt-12 max-w-xl">
+                        <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground block mb-8">
+                            Send a message
+                        </span>
+
+                        <Form {...form}>
+                            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-8">
+                                {/* Name Field */}
+                                <FormField
+                                    control={form.control}
+                                    name="name"
+                                    render={({ field }) => (
+                                        <FormItem className="space-y-1.5">
+                                            <label
+                                                htmlFor="contact-name"
+                                                className="font-mono text-xs uppercase tracking-wider text-muted-foreground block"
+                                            >
+                                                Name <span className="text-foreground">*</span>
+                                            </label>
+                                            <FormControl>
+                                                <input
+                                                    id="contact-name"
+                                                    type="text"
+                                                    required
+                                                    autoComplete="name"
+                                                    className="w-full py-2 bg-transparent border-0 border-b border-border focus:border-foreground text-foreground text-base rounded-none outline-none transition-colors"
+                                                    {...field}
+                                                />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+
+                                {/* Email Field */}
+                                <FormField
+                                    control={form.control}
+                                    name="email"
+                                    render={({ field }) => (
+                                        <FormItem className="space-y-1.5">
+                                            <label
+                                                htmlFor="contact-email"
+                                                className="font-mono text-xs uppercase tracking-wider text-muted-foreground block"
+                                            >
+                                                Email <span className="text-foreground">*</span>
+                                            </label>
+                                            <FormControl>
+                                                <input
+                                                    id="contact-email"
+                                                    type="email"
+                                                    required
+                                                    autoComplete="email"
+                                                    className="w-full py-2 bg-transparent border-0 border-b border-border focus:border-foreground text-foreground text-base rounded-none outline-none transition-colors"
+                                                    {...field}
+                                                />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+
+                                {/* Phone Field (Optional) */}
+                                <FormField
+                                    control={form.control}
+                                    name="phone"
+                                    render={({ field }) => (
+                                        <FormItem className="space-y-1.5">
+                                            <label
+                                                htmlFor="contact-phone"
+                                                className="font-mono text-xs uppercase tracking-wider text-muted-foreground block"
+                                            >
+                                                Phone <span className="text-muted-foreground/60">(Optional)</span>
+                                            </label>
+                                            <FormControl>
+                                                <input
+                                                    id="contact-phone"
+                                                    type="tel"
+                                                    autoComplete="tel"
+                                                    className="w-full py-2 bg-transparent border-0 border-b border-border focus:border-foreground text-foreground text-base rounded-none outline-none transition-colors"
+                                                    {...field}
+                                                />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+
+                                {/* Message Field */}
+                                <FormField
+                                    control={form.control}
+                                    name="message"
+                                    render={({ field }) => (
+                                        <FormItem className="space-y-1.5">
+                                            <label
+                                                htmlFor="contact-message"
+                                                className="font-mono text-xs uppercase tracking-wider text-muted-foreground block"
+                                            >
+                                                Message <span className="text-foreground">*</span>
+                                            </label>
+                                            <FormControl>
+                                                <textarea
+                                                    id="contact-message"
+                                                    required
+                                                    rows={4}
+                                                    className="w-full py-2 bg-transparent border-0 border-b border-border focus:border-foreground text-foreground text-base rounded-none outline-none resize-none transition-colors"
+                                                    {...field}
+                                                />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+
+                                {/* Screen reader announced status */}
+                                {status && (
+                                    <div
+                                        role="status"
+                                        aria-live="polite"
+                                        className={`font-mono text-xs tracking-wider pt-2 ${
+                                            status.type === "success"
+                                                ? "text-foreground font-medium"
+                                                : "text-rose-500 font-medium"
+                                        }`}
+                                    >
+                                        {status.type === "success" ? "✓ " : "✕ "}
+                                        {status.message}
+                                    </div>
+                                )}
+
+                                {/* Submit Button */}
+                                <div className="pt-2">
+                                    <button
+                                        type="submit"
+                                        disabled={form.formState.isSubmitting}
+                                        className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-foreground font-medium pb-1 border-b border-foreground hover:opacity-70 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity cursor-pointer"
+                                    >
+                                        <span>
+                                            {form.formState.isSubmitting ? "Sending message..." : "Send message"}
+                                        </span>
+                                        <span className="group-hover:translate-x-0.5 transition-transform" aria-hidden="true">
+                                            →
+                                        </span>
+                                    </button>
+                                </div>
+                            </form>
+                        </Form>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
 
-export default Contact
+export default Contact

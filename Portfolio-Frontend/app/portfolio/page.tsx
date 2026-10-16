@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { portfolioData } from "@/data/portfolio"
 import { ProjectList } from "@/components/sections/ProjectList"
+import Footer from "@/components/layout/Footer"
 
 export const metadata: Metadata = {
     title: "Work",
@@ -12,7 +13,8 @@ export default function PortfolioPage() {
     const { projects } = portfolioData
 
     return (
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full py-20 sm:py-28 lg:py-36">
+        <div className="flex flex-col min-h-[calc(100vh-var(--nav-height))] justify-between">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full py-20 sm:py-28 lg:py-36">
             {/* Header with 12-Column Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-16 sm:mb-24">
                 <div className="lg:col-span-3">
@@ -44,6 +46,8 @@ export default function PortfolioPage() {
                     placeholderText="Selected work, coming soon."
                 />
             </div>
+            </div>
+            <Footer />
         </div>
     )
 }

@@ -23,7 +23,7 @@ export default function PortfolioPage() {
                     </span>
                     <Link
                         href="/"
-                        className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5"
+                        className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground"
                     >
                         <span>← Back to home</span>
                     </Link>

@@ -52,7 +52,8 @@ export function NavLinks({ links }: NavLinksProps) {
                             key={link.targetId}
                             href={link.href}
                             onClick={handleNav(link.targetId, link.isPage)}
-                            className={`relative py-1 transition-colors hover:text-foreground ${
+                            aria-current={isCurrent ? "page" : undefined}
+                            className={`relative py-1 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground ${
                                 isCurrent ? "text-foreground font-semibold" : "text-muted-foreground"
                             }`}
                         >
@@ -91,7 +92,8 @@ export function NavLinks({ links }: NavLinksProps) {
                                 key={link.targetId}
                                 href={link.href}
                                 onClick={handleNav(link.targetId, link.isPage)}
-                                className={`py-2 transition-colors ${
+                                aria-current={isCurrent ? "page" : undefined}
+                                className={`py-2 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground ${
                                     isCurrent ? "text-foreground font-semibold" : "text-muted-foreground"
                                 }`}
                             >

@@ -81,7 +81,7 @@ const Contact = () => {
                         <div>
                             <a
                                 href={`mailto:${personal.email}`}
-                                className="group inline-flex items-center gap-2 font-serif italic text-2xl sm:text-3xl text-foreground pb-1 border-b border-foreground hover:opacity-70 transition-opacity"
+                                className="group inline-flex items-center gap-2 font-serif italic text-2xl sm:text-3xl text-foreground pb-1 border-b border-foreground hover:opacity-70 transition-opacity focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground"
                             >
                                 <span>{personal.email}</span>
                                 <span className="font-sans not-italic text-xl sm:text-2xl group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true">
@@ -96,7 +96,7 @@ const Contact = () => {
                                 href={socialLinks.github.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group inline-flex items-center gap-1.5 text-foreground hover:opacity-70 pb-0.5 border-b border-foreground transition-opacity"
+                                className="group inline-flex items-center gap-1.5 text-foreground hover:opacity-70 pb-0.5 border-b border-foreground transition-opacity focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground"
                                 aria-label={socialLinks.github.ariaLabel}
                             >
                                 <span>GitHub</span>
@@ -108,7 +108,7 @@ const Contact = () => {
                                 href={socialLinks.linkedin.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group inline-flex items-center gap-1.5 text-foreground hover:opacity-70 pb-0.5 border-b border-foreground transition-opacity"
+                                className="group inline-flex items-center gap-1.5 text-foreground hover:opacity-70 pb-0.5 border-b border-foreground transition-opacity focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground"
                                 aria-label={socialLinks.linkedin.ariaLabel}
                             >
                                 <span>LinkedIn</span>
@@ -191,7 +191,7 @@ const Contact = () => {
                                                 htmlFor="contact-phone"
                                                 className="font-mono text-xs uppercase tracking-wider text-muted-foreground block"
                                             >
-                                                Phone <span className="text-muted-foreground/60">(Optional)</span>
+                                                Phone <span className="text-muted-foreground">(Optional)</span>
                                             </label>
                                             <FormControl>
                                                 <input
@@ -254,7 +254,7 @@ const Contact = () => {
                                     <button
                                         type="submit"
                                         disabled={form.formState.isSubmitting}
-                                        className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-foreground font-medium pb-1 border-b border-foreground hover:opacity-70 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity cursor-pointer"
+                                        className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-foreground font-medium pb-1 border-b border-foreground hover:opacity-70 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground"
                                     >
                                         <span>
                                             {form.formState.isSubmitting ? "Sending message..." : "Send message"}

@@ -33,7 +33,7 @@ const Work = () => {
                     <div className="pt-4">
                         <Link
                             href="/portfolio"
-                            className="group inline-flex items-center gap-2 text-foreground font-medium pb-1 border-b border-foreground font-mono text-xs uppercase tracking-widest hover:opacity-70 transition-opacity"
+                            className="group inline-flex items-center gap-2 text-foreground font-medium pb-1 border-b border-foreground font-mono text-xs uppercase tracking-widest hover:opacity-70 transition-opacity focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground"
                         >
                             <span>View all work</span>
                             <span className="group-hover:translate-x-0.5 transition-transform" aria-hidden="true">→</span>

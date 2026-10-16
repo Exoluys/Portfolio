@@ -22,7 +22,7 @@ const Footer = () => {
                 <a
                     href="#top"
                     onClick={handleScrollTop}
-                    className="text-foreground hover:opacity-70 transition-opacity pb-0.5 border-b border-foreground cursor-pointer"
+                    className="text-foreground hover:opacity-70 transition-opacity pb-0.5 border-b border-foreground cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground"
                 >
                     Back to top ↑
                 </a>

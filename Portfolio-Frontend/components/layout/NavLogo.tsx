@@ -24,7 +24,7 @@ export function NavLogo() {
         <Link
             href="/"
             onClick={handleClick}
-            className="font-serif text-xl tracking-tight text-foreground hover:opacity-70 transition-opacity cursor-pointer font-medium"
+            className="font-serif text-xl tracking-tight text-foreground hover:opacity-70 transition-opacity cursor-pointer font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground"
             aria-label="Jai Revankar — Home"
         >
             {name}

@@ -11,16 +11,19 @@ const newsreader = Newsreader({
     subsets: ["latin"],
     style: ["normal", "italic"],
     variable: "--font-serif",
+    display: "swap",
 })
 
 const inter = Inter({
     subsets: ["latin"],
     variable: "--font-sans",
+    display: "swap",
 })
 
 const jetbrainsMono = JetBrains_Mono({
     subsets: ["latin"],
     variable: "--font-mono",
+    display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -40,24 +43,11 @@ export const metadata: Metadata = {
         title: portfolioData.siteMetadata.title,
         description: portfolioData.siteMetadata.description,
         siteName: portfolioData.personal.name,
-        images: [
-            {
-                url: "/favicon.png",
-                width: 512,
-                height: 512,
-                alt: `${portfolioData.personal.name} Logo`,
-            },
-        ],
     },
     twitter: {
         card: "summary_large_image",
         title: portfolioData.siteMetadata.title,
         description: portfolioData.siteMetadata.description,
-        images: ["/favicon.png"],
-    },
-    icons: {
-        icon: "/favicon.ico",
-        apple: "/favicon.png",
     },
 };
 
@@ -70,9 +60,15 @@ export default function RootLayout({
         <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
             <body className={`${newsreader.variable} ${inter.variable} ${jetbrainsMono.variable} font-sans antialiased min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300`}>
                 <ThemeProvider>
+                    <a
+                        href="#main-content"
+                        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-foreground focus:text-background focus:font-mono focus:text-xs focus:uppercase focus:tracking-widest"
+                    >
+                        Skip to content
+                    </a>
                     <HashCleaner />
                     <Navbar />
-                    <main className="flex-1">
+                    <main id="main-content" className="flex-1">
                         {children}
                     </main>
                 </ThemeProvider>
